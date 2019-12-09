@@ -5,16 +5,15 @@ import {
   Column,
   BaseEntity
 } from 'typeorm'
-import { Field, Int, ObjectType } from 'type-graphql'
+import { Field, ID, ObjectType } from 'type-graphql'
 
 @ObjectType()
 @Entity()
 export class User extends BaseEntity {
-  @Field(() => Int)
   @PrimaryGeneratedColumn()
   id!: number
 
-  @Field()
+  @Field(() => ID, { name: 'id' })
   @Column()
   @Generated('uuid')
   uuid!: string

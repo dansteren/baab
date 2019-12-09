@@ -1,5 +1,3 @@
-export const resolvers = {
-  Query: {
-    users: () => []
-  }
-}
+import { UserResolver } from './UserResolver'
+
+export const resolvers = [UserResolver]
