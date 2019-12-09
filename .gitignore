@@ -1,0 +1,15 @@
+# Mac
+.DS_Store
+
+# Node
+node_modules
+
+# Secrets
+.env
+
+# VS Code
+.vscode/*
+!.vscode/launch.json
+
+# Built Files
+dist
