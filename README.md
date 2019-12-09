@@ -19,7 +19,6 @@ An app also allows players to come up with their own encounters and share them w
 - Creating encounters
 - Extensive decision trees
 
-
 # Stack
 
 - postgres

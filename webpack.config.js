@@ -1,5 +1,5 @@
-const path = require('path');
-const nodeExternals = require('webpack-node-externals');
+const path = require('path')
+const nodeExternals = require('webpack-node-externals')
 
 module.exports = {
   devtool: 'source-map',
@@ -23,4 +23,4 @@ module.exports = {
     extensions: ['.ts', '.js']
   },
   target: 'node'
-};
+}
