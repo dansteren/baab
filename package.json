@@ -1,8 +1,9 @@
 {
-  "name": "apollo-server-starter",
+  "name": "baab",
   "version": "0.1.0",
   "description": "",
   "main": "index.js",
+  "private": true,
   "scripts": {
     "build": "webpack",
     "init": "./scripts/init.sh",
@@ -12,9 +13,8 @@
   },
   "keywords": [],
   "author": "Dan Steren <daniel.d.steren@gmail.com> (https://github.com/dansteren)",
-  "license": "MIT",
   "dependencies": {
-    "apollo-server": "^2.9.7",
+    "apollo-server": "^2.9.13",
     "graphql": "^14.5.8",
     "pg": "^7.14.0",
     "reflect-metadata": "^0.1.13",
@@ -22,11 +22,11 @@
   },
   "devDependencies": {
     "@types/webpack-env": "^1.14.1",
-    "nodemon": "^1.19.4",
-    "prettier": "1.18.2",
+    "nodemon": "^2.0.1",
+    "prettier": "^1.19.1",
     "ts-loader": "^6.2.1",
-    "ts-node": "^8.4.1",
-    "typescript": "^3.6.4",
+    "ts-node": "^8.5.4",
+    "typescript": "^3.7.3",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
     "webpack-node-externals": "^1.7.2"
