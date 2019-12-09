@@ -18,9 +18,11 @@
     "graphql": "^14.5.8",
     "pg": "^7.14.0",
     "reflect-metadata": "^0.1.13",
+    "type-graphql": "^0.17.5",
     "typeorm": "^0.2.21"
   },
   "devDependencies": {
+    "@types/graphql": "^14.5.0",
     "@types/webpack-env": "^1.14.1",
     "nodemon": "^2.0.1",
     "prettier": "^1.19.1",
