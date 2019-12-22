@@ -1,0 +1,59 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Start Server",
+      "type": "shell",
+      "command": "npx",
+      "args": [
+        "nodemon"
+      ],
+      "problemMatcher": [],
+      "presentation": {
+        "echo": false,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
+      }
+    },
+    {
+      "label": "Generate Migration",
+      "type": "shell",
+      "command": "npx",
+      "args": [
+        "ts-node",
+        "./node_modules/.bin/typeorm",
+        "migration:generate",
+        "-n",
+        "${input:migrationName}"
+      ],
+      "problemMatcher": [
+        "$tsc"
+      ]
+    },
+    {
+      "label": "Migrate Database",
+      "type": "shell",
+      "command": "npx",
+      "args": [
+        "ts-node",
+        "./node_modules/.bin/typeorm",
+        "migration:run"
+      ],
+      "problemMatcher": [
+        "$tsc"
+      ]
+    }
+  ],
+  "inputs": [
+    {
+      "id": "migrationName",
+      "description": "Name your migration",
+      "type": "promptString"
+    }
+  ]
+}

@@ -10,6 +10,7 @@ node_modules
 # VS Code
 .vscode/*
 !.vscode/launch.json
+!.vscode/tasks.json
 
 # Built Files
 dist
