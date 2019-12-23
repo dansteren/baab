@@ -33,7 +33,15 @@
       ],
       "problemMatcher": [
         "$tsc"
-      ]
+      ],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": true
+      }
     },
     {
       "label": "Migrate Database",
