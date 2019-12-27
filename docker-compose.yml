@@ -1,0 +1,30 @@
+version: '3.7'
+services:
+  db:
+    container_name: db
+    image: postgres
+    restart: always
+    env_file: .env
+    networks:
+      - inter-net
+    ports:
+      - '5432:5432'
+    volumes:
+      - 'data:/var/lib/postgresql/data'
+  app:
+    container_name: app
+    depends_on:
+      - db
+    build: .
+    env_file: .env
+    networks:
+      - inter-net
+    ports:
+      - '4000:4000'
+
+volumes:
+  data:
+
+networks:
+  inter-net:
+    driver: bridge
