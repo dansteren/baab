@@ -1,1 +1,2 @@
 brew "postgresl"
+brew "direnv"
