@@ -22,7 +22,7 @@ spec:
             - containerPort: 4000
           envFrom:
             - configMapRef:
-                name: backend-config
+                name: graphql-config
           env:
             - name: TYPEORM_USERNAME
               valueFrom:
