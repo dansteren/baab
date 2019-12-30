@@ -6,6 +6,7 @@ node_modules
 
 # Secrets
 .env
+*.local.env
 
 # VS Code
 .vscode/*
