@@ -1,3 +1,10 @@
+apiVersion: v1
+data:
+  POSTGRES_DB: baab
+kind: ConfigMap
+metadata:
+  name: postgres-config
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:

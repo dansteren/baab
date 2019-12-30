@@ -1,3 +1,15 @@
+apiVersion: v1
+data:
+  PORT: '4000'
+  TYPEORM_HOST: loadbalancer
+  TYPEORM_LOGGING: 'false'
+  TYPEORM_PORT: '5432'
+  TYPEORM_SYNCHRONIZE: 'false'
+kind: ConfigMap
+metadata:
+  name: graphql-config
+
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
