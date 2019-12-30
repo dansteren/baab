@@ -5,10 +5,12 @@ import { User } from '../entity/User'
 export class UserResolver {
   @Mutation(() => User)
   async createUser(
+    @Arg('email') email: string,
     @Arg('firstName') firstName: string,
     @Arg('lastName') lastName: string
   ) {
     const user = new User()
+    user.email = email
     user.firstName = firstName
     user.lastName = lastName
     await user.save()
