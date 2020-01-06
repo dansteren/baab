@@ -24,7 +24,15 @@ spec:
             secretKeyRef:
               name: db-secrets
               key: DB_PASSWORD
+      volumeMounts:
+        - data
+          mountPath: /var/lib/postgresql/data
       resources:
         limits:
           memory: '128Mi'
           cpu: '500m'
+  volumes:
+    - name: data
+      hostPath:
+        path: /home/backend/data
+        type: Directory
