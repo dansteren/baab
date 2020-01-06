@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Pod
+metadata:
+  labels:
+    app: baab
+    tier: db
+spec:
+  containers:
+    - name: postgres
+      image: postgres
+      ports:
+        - containerPort: 5432
+      envFrom:
+        - configMapRef:
+            name: postgres-config
+      env:
+        - name: POSTGRES_USER
+          valueFrom:
+            secretKeyRef:
+              name: db-secrets
+              key: DB_USERNAME
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: db-secrets
+              key: DB_PASSWORD
+      resources:
+        limits:
+          memory: '128Mi'
+          cpu: '500m'

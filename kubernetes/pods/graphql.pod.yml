@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Pod
+metadata:
+  labels:
+    app: baab
+    tier: backend
+spec:
+  containers:
+    - name: graphql
+      image: adrfoong/sheep-backend
+      ports:
+        - containerPort: 4000
+      envFrom:
+        - configMapRef:
+            name: graphql-config
+      env:
+        - name: TYPEORM_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: db-secrets
+              key: DB_USERNAME
+        - name: TYPEORM_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: db-secrets
+              key: DB_PASSWORD
+        - name: NODE_ENV
+          value: production
+      resources:
+        limits:
+          memory: '128Mi'
+          cpu: '500m'
