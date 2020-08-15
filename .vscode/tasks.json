@@ -6,8 +6,13 @@
     {
       "label": "Start Server",
       "type": "shell",
-      "command": "npx",
+      "command": "docker-compose",
       "args": [
+        "run",
+        "-p",
+        "0.0.0.0:4000:4000",
+        "app",
+        "npx",
         "nodemon"
       ],
       "problemMatcher": [],
@@ -23,8 +28,11 @@
     {
       "label": "Generate Migration",
       "type": "shell",
-      "command": "npx",
+      "command": "docker-compose",
       "args": [
+        "run",
+        "app",
+        "npx",
         "ts-node",
         "./node_modules/.bin/typeorm",
         "migration:generate",
@@ -46,8 +54,11 @@
     {
       "label": "Migrate Database",
       "type": "shell",
-      "command": "npx",
+      "command": "docker-compose",
       "args": [
+        "run",
+        "app",
+        "npx",
         "ts-node",
         "./node_modules/.bin/typeorm",
         "migration:run"
@@ -67,9 +78,11 @@
     {
       "label": "Revert Migration",
       "type": "shell",
-      "command": "npx",
+      "command": "docker-compose",
       "args": [
-        "ts-node",
+        "run",
+        "app",
+        "npx",
         "./node_modules/.bin/typeorm",
         "migration:revert"
       ],

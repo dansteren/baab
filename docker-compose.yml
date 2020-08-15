@@ -21,6 +21,8 @@ services:
       - inter-net
     ports:
       - '4000:4000'
+    volumes:
+      - './:/home/app'
 
 volumes:
   data:

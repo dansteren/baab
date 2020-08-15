@@ -2,7 +2,7 @@
 
 Beyond Above and Below (Baab) is a project to be able to share and collaborate on new encounters for the board game "Above and Below."
 
-# Why?
+## Why?
 
 Encounters involve interacting with a random scenario. An attempt to handle the random nature of encounters is made by the game by creating cards with each number and having the player roll a dice to determine the encounter. This works alright, but the expansions make it hard to add scenarios without making things clumsy.
 
@@ -10,7 +10,7 @@ A better solution would be to have an app that randomly chooses a scenario from 
 
 An app also allows players to come up with their own encounters and share them with other players.
 
-# Features
+## Features
 
 - Random encounter selection
 - Adding encounter packs
@@ -19,7 +19,7 @@ An app also allows players to come up with their own encounters and share them w
 - Creating encounters
 - Extensive decision trees
 
-# Stack
+## Stack
 
 - postgres
 - node
@@ -27,3 +27,27 @@ An app also allows players to come up with their own encounters and share them w
 - typescript
 - type-graphql
 - apollo-sever
+
+## Getting Started
+
+### With Docker-Compose
+
+1. Run migrations
+
+```bash
+docker-compose run app npx ts-node ./node_modules/.bin/typeorm migration:run
+```
+
+2. Start the server
+
+```bash
+docker-compose run -p 0.0.0.0:4000:4000 app npx nodemon
+```
+
+3. Prosper
+
+**Note**: For VS Code users these commands can be accessed through the `Tasks: Run Task` command.
+
+### With Kubernetes
+
+Checkout the Kubernetes [README](/kubernetes/README.md).
